@@ -1,0 +1,345 @@
+:root {
+    --bg: #000000;
+    --text-main: #f5f5f5;
+    --text-muted: #737373;
+    --comment: #6b7280;
+    --border: #262626;
+    --cursor: #f97316;
+    --project-link: #3b82f6; /* Modern blue for project links */
+    --project-link-hover: #60a5fa;
+    --sidebar-bg: #000000;
+    --sidebar-active: #1f2937;
+    --highlight-method: #0ea5e9; /* Light blue for GET */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text-main);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.8; 
+    min-height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background-color: var(--bg);
+    z-index: 100;
+}
+
+.navbar a {
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 12px 24px;
+    border-right: 1px solid var(--border);
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.navbar a.active, .navbar a:hover {
+    color: var(--text-main);
+}
+
+.container {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    border-right: 1px solid var(--border);
+    padding: 30px 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar-section {
+    margin-bottom: 30px;
+}
+
+.sidebar-title {
+    color: var(--comment);
+    padding: 0 24px;
+    margin-bottom: 8px;
+}
+
+.sidebar-link {
+    display: block;
+    color: var(--text-muted);
+    padding: 6px 24px;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.sidebar-link:hover {
+    color: var(--text-main);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.sidebar-link.active {
+    color: var(--text-main);
+    background-color: var(--sidebar-active);
+}
+
+/* Main Content Area */
+.editor {
+    flex-grow: 1;
+    padding: 40px 60px;
+    max-width: 900px;
+}
+
+.section-block {
+    margin-bottom: 80px;
+}
+
+.terminal-header {
+    font-weight: bold;
+    color: var(--text-main);
+    margin-bottom: 8px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.terminal-header::before {
+    content: "cat ";
+    color: var(--highlight-method);
+}
+
+.terminal-desc {
+    color: var(--comment);
+    margin-bottom: 24px;
+}
+
+.terminal-content {
+    margin-bottom: 24px;
+}
+
+.key-val {
+    display: flex;
+    margin-bottom: 12px;
+}
+
+.key {
+    width: 150px;
+    flex-shrink: 0;
+    color: var(--text-muted);
+}
+
+.val {
+    color: var(--text-main);
+}
+
+.project-entry {
+    margin-bottom: 30px;
+}
+
+.project-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.project-desc {
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.exp-entry {
+    margin-bottom: 28px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+.exp-entry:last-child {
+    border-bottom: none;
+}
+
+.exp-role {
+    color: var(--text-main);
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+.exp-meta {
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+    margin-bottom: 4px;
+}
+
+.exp-company {
+    color: #f97316;
+}
+
+.exp-type {
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.exp-period {
+    color: var(--comment);
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+
+.exp-stack {
+    color: var(--highlight-method);
+    font-size: 12px;
+}
+
+.exp-desc {
+    color: var(--text-muted);
+    margin-top: 6px;
+    line-height: 1.6;
+}
+
+.badge {
+    border: 1px solid var(--border);
+    padding: 2px 8px;
+    font-size: 12px;
+    color: var(--text-muted);
+    border-radius: 4px;
+}
+
+a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.15s;
+    border-bottom: 1px solid var(--border);
+}
+
+a:hover {
+    color: var(--text-main);
+    border-bottom-color: var(--text-main);
+}
+
+a.project-link {
+    color: var(--project-link);
+    font-weight: bold;
+    border-bottom: none;
+}
+
+a.project-link:hover {
+    color: var(--project-link-hover);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+}
+
+.cursor-wrapper {
+    margin-top: 40px;
+    padding-left: 150px;
+}
+
+.cursor {
+    display: inline-block;
+    width: 10px;
+    height: 1.25em;
+    background-color: var(--cursor);
+    vertical-align: middle;
+    animation: blink 1s step-end infinite;
+}
+
+.header-cursor {
+    display: inline-block;
+    width: 10px;
+    height: 0.9em;
+    background-color: var(--cursor);
+    vertical-align: middle;
+    margin-left: 6px;
+    animation: blink 1s step-end infinite;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* ── Mobile hamburger button ── */
+.menu-btn {
+    display: none;
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 300;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 8px 10px;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-btn span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--text-main);
+    transition: all 0.25s;
+}
+
+.menu-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-btn.open span:nth-child(2) { opacity: 0; }
+.menu-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── Sidebar overlay (mobile) ── */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 200;
+}
+
+.sidebar-overlay.active { display: block; }
+
+/* ── Responsive breakpoint ── */
+@media (max-width: 768px) {
+    .menu-btn { display: flex; }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -300px;
+        height: 100vh;
+        width: 260px;
+        z-index: 250;
+        background: var(--bg);
+        transition: left 0.25s ease;
+        overflow-y: auto;
+        padding-top: 60px;
+    }
+
+    .sidebar.open { left: 0; }
+
+    .editor {
+        padding: 24px 20px;
+        max-width: 100%;
+    }
+
+    .key { width: 110px; }
+}

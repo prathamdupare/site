@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pratham Dupare</title>
+    <link rel="stylesheet" href="styles.css?v=5">
+</head>
+<body>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-title"># personal</div>
+                <a href="#whoami" class="sidebar-link active">whoami</a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title"># portfolio</div>
+                <a href="#projects" class="sidebar-link">list projects</a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title"># work</div>
+                <a href="#experience" class="sidebar-link">experience</a>
+                <a href="#skills" class="sidebar-link">skills</a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title"># connect</div>
+                <a href="#contact" class="sidebar-link">get contact</a>
+            </div>
+        </aside>
+
+        <main class="editor">
+            <section id="whoami" class="section-block">
+                <div class="terminal-header">/whoami<span class="header-cursor"></span></div>
+                <div class="terminal-desc">get the current user's profile.</div>
+                <div class="terminal-content">
+                    <div class="key-val">
+                        <span class="key">name</span>
+                        <span class="val">Pratham Dupare</span>
+                    </div>
+                    <div class="key-val">
+                        <span class="key">alias</span>
+                        <span class="val">@prathamdupare</span>
+                    </div>
+                    <div class="key-val">
+                        <span class="key">location</span>
+                        <span class="val">India</span>
+                    </div>
+                    <div class="key-val">
+                        <span class="key">editor</span>
+                        <span class="val">Vim btw</span>
+                    </div>
+                    <div class="key-val">
+                        <span class="key">env</span>
+                        <span class="val">NixOS · Hyprland · tmux</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="section-block">
+                <div class="terminal-header">/projects<span class="header-cursor hidden"></span></div>
+                <div class="terminal-desc">featured open-source work.</div>
+                <div class="terminal-content">
+                    <div class="project-entry">
+                        <div class="project-title">
+                            <a href="https://github.com/prathamdupare/hati" target="_blank" class="project-link">hati</a>
+                            <span class="badge">MIT License</span>
+                        </div>
+                        <div class="project-desc">
+                            A self-hosted dashboard that puts all your feeds in one place.
+                            Built with Next.js, TypeScript, and Tailwind CSS.
+                            Fetches and normalizes content from various sources into a unified widget-based interface.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience" class="section-block">
+                <div class="terminal-header">/experience<span class="header-cursor hidden"></span></div>
+                <div class="terminal-desc">work history, most recent first.</div>
+                <div class="terminal-content">
+
+                    <div class="exp-entry">
+                        <div class="exp-role">Software Development Intern</div>
+                        <div class="exp-meta">
+                            <span class="exp-company">FoCDoT Technologies</span>
+                            <span class="exp-type">Internship · Hybrid</span>
+                        </div>
+                        <div class="exp-period">Oct 2024 – Sep 2025 · 1 yr</div>
+                        <div class="exp-stack">React.js · Python · TypeScript</div>
+                    </div>
+
+                    <div class="exp-entry">
+                        <div class="exp-role">Founder</div>
+                        <div class="exp-meta">
+                            <span class="exp-company">Fosspage</span>
+                            <span class="exp-type">Self-employed · India</span>
+                        </div>
+                        <div class="exp-period">Jan 2022 – Present · 4 yrs</div>
+                        <div class="exp-desc">Web portal focused on Linux, Android and open-source — making FOSS accessible and practical for everyone.</div>
+                    </div>
+
+                    <div class="exp-entry">
+                        <div class="exp-role">Freelance Web Developer</div>
+                        <div class="exp-meta">
+                            <span class="exp-company">Upwork</span>
+                            <span class="exp-type">Freelance · Remote</span>
+                        </div>
+                        <div class="exp-period">Feb 2023 – Present · 3 yrs</div>
+                        <div class="exp-stack">React.js · TypeScript</div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="skills" class="section-block">
+                <div class="terminal-header">/skills<span class="header-cursor hidden"></span></div>
+                <div class="terminal-desc">languages, tools, and environment.</div>
+                <div class="terminal-content">
+                    <div class="key-val">
+                        <span class="key">languages</span>
+                        <span class="val">TypeScript · JavaScript · Go · Python</span>
+                    </div>
+                    <div class="key-val">
+                        <span class="key">frontend</span>
+                        <span class="val">React · Next.js · Tailwind CSS</span>
+                    </div>
+                    <div class="key-val">
+                        <span class="key">cs</span>
+                        <span class="val">DSA · Graphs · Algorithms</span>
+                    </div>
+                    <div class="key-val">
+                        <span class="key">tooling</span>
+                        <span class="val">Neovim · Git · tmux · Nix Flakes</span>
+                    </div>
+                    <div class="key-val">
+                        <span class="key">environment</span>
+                        <span class="val">NixOS · Wayland · Hyprland</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="section-block">
+                <div class="terminal-header">/contact<span class="header-cursor hidden"></span></div>
+                <div class="terminal-desc">retrieve contact links and social profiles.</div>
+                <div class="terminal-content">
+                    <div class="key-val">
+                        <span class="key">github</span>
+                        <span class="val"><a href="https://github.com/prathamdupare" target="_blank">github.com/prathamdupare</a></span>
+                    </div>
+                    <div class="key-val">
+                        <span class="key">linkedin</span>
+                        <span class="val"><a href="https://linkedin.com/in/pratham-dupare-a99b97247" target="_blank">linkedin.com/in/pratham-dupare-a99b97247</a></span>
+                    </div>
+                    <div class="key-val">
+                        <span class="key">x (twitter)</span>
+                        <span class="val"><a href="https://x.com/prathammdupare" target="_blank">x.com/prathammdupare</a></span>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+
+    </div>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const sidebar = document.querySelector('.sidebar');
+        const overlay = document.getElementById('sidebarOverlay');
+
+        function openSidebar() {
+            sidebar.classList.add('open');
+            overlay.classList.add('active');
+            menuBtn.classList.add('open');
+        }
+
+        function closeSidebar() {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('active');
+            menuBtn.classList.remove('open');
+        }
+
+        menuBtn.addEventListener('click', () => {
+            sidebar.classList.contains('open') ? closeSidebar() : openSidebar();
+        });
+        overlay.addEventListener('click', closeSidebar);
+
+        function activateSection(section) {
+            document.querySelectorAll('.header-cursor').forEach(c => c.classList.add('hidden'));
+            const headerCursor = section.querySelector('.header-cursor');
+            if (headerCursor) headerCursor.classList.remove('hidden');
+
+            const sectionId = section.getAttribute('id');
+            document.querySelectorAll('.sidebar-link').forEach(link => link.classList.remove('active'));
+            const matchingLink = document.querySelector(`.sidebar-link[href="#${sectionId}"]`);
+            if (matchingLink) matchingLink.classList.add('active');
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetElement = document.querySelector(this.getAttribute('href'));
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    activateSection(targetElement);
+                }
+                document.querySelectorAll('.sidebar-link').forEach(link => link.classList.remove('active'));
+                this.classList.add('active');
+                closeSidebar();
+            });
+        });
+
+        document.querySelectorAll('.section-block').forEach(section => {
+            section.addEventListener('click', function () {
+                activateSection(this);
+            });
+        });
+    </script>
+</body>
+</html>
