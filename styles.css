@@ -53,14 +53,18 @@ body {
 }
 
 .status-badge {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 6px 16px 6px 24px;
-    margin-bottom: 24px;
-    font-size: 12px;
+    gap: 6px;
+    padding: 6px 12px;
+    margin: 0 24px 24px;
+    font-size: 11px;
     color: var(--green);
     letter-spacing: 0.02em;
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    border-radius: 20px;
+    width: fit-content;
 }
 
 .status-dot {
@@ -113,10 +117,16 @@ body {
 .editor {
     flex-grow: 1;
     padding: 48px 64px;
-    max-width: 900px;
+    width: 100%;
 }
 
-.section-block { margin-bottom: 88px; }
+.section-block { 
+    margin-bottom: 88px; 
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.01);
+}
 
 /* ── Terminal header ── */
 .terminal-header {
@@ -132,6 +142,7 @@ body {
     content: "cat ";
     color: var(--method);
     font-weight: normal;
+    margin-right: 4px;
 }
 
 .terminal-desc {
@@ -190,9 +201,9 @@ a:hover {
 
 /* ── PROJECT CARDS ── */
 .projects-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 24px;
 }
 
 .project-card {
@@ -209,22 +220,23 @@ a:hover {
 /* Preview area */
 .project-preview {
     position: relative;
-    height: 220px;
+    height: 300px;
     background: #080808;
     overflow: hidden;
     cursor: pointer;
-}
-
-.preview-inner {
-    width: 100%;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.project-card:hover .preview-inner {
+.project-card:hover .project-image {
     filter: brightness(0.55);
 }
 
@@ -343,339 +355,6 @@ a:hover {
     color: var(--gold-light);
     border-color: rgba(251, 191, 36, 0.25);
 }
-
-/* ─────────────────────────────────────────
-   KINTSU preview — mobile app mockup
-───────────────────────────────────────── */
-.kintsu-preview { background: #050505; }
-
-.mobile-frame {
-    width: 180px;
-    background: #0f0f0f;
-    border: 1px solid #1a1a1a;
-    border-radius: 16px;
-    padding: 12px 14px;
-    font-size: 11px;
-}
-
-.mobile-status-bar {
-    display: flex;
-    justify-content: space-between;
-    color: #555;
-    font-size: 10px;
-    margin-bottom: 8px;
-}
-
-.mobile-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.mobile-title {
-    font-weight: bold;
-    font-size: 13px;
-    color: var(--text-main);
-}
-
-.mobile-streak { font-size: 12px; }
-
-.habit-week-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 3px;
-    margin-bottom: 10px;
-}
-
-.hwg-tile {
-    aspect-ratio: 1;
-    border-radius: 3px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 8px;
-    font-weight: bold;
-}
-
-.hwg-tile.done { background: #1a3a1a; color: #4ade80; }
-.hwg-tile.gold { background: #3a2800; color: var(--gold-light); }
-.hwg-tile.empty { background: #141414; color: #333; }
-
-.habit-row-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 6px;
-}
-
-.hrname { font-size: 10px; color: #888; }
-
-.hrdots { display: flex; gap: 3px; }
-
-.hd {
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-}
-
-.hd.done { background: #22c55e; }
-.hd.gold { background: var(--gold-light); }
-.hd.empty { background: #1a1a1a; border: 1px solid #2a2a2a; }
-
-/* ─────────────────────────────────────────
-   HATI preview — dashboard mockup
-───────────────────────────────────────── */
-.hati-preview { background: #030303; }
-
-.dash-frame {
-    width: 340px;
-    height: 180px;
-    display: flex;
-    background: #0a0a0a;
-    border: 1px solid #1a1a1a;
-    border-radius: 6px;
-    overflow: hidden;
-    font-size: 10px;
-}
-
-.dash-sidebar {
-    width: 80px;
-    background: #060606;
-    border-right: 1px solid #141414;
-    padding: 10px 0;
-    flex-shrink: 0;
-}
-
-.dash-logo {
-    font-size: 12px;
-    font-weight: bold;
-    color: var(--method);
-    padding: 0 12px 10px;
-    border-bottom: 1px solid #141414;
-    margin-bottom: 6px;
-}
-
-.dash-nav {
-    padding: 4px 12px;
-    color: #444;
-    cursor: pointer;
-    font-size: 10px;
-}
-
-.dash-nav.active-nav { color: var(--text-main); background: #111; }
-
-.dash-content {
-    flex: 1;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6px;
-    padding: 8px;
-}
-
-.dash-widget {
-    background: #0d0d0d;
-    border: 1px solid #1a1a1a;
-    border-radius: 4px;
-    padding: 8px;
-}
-
-.dw-head {
-    font-size: 9px;
-    color: #555;
-    margin-bottom: 6px;
-    padding-bottom: 4px;
-    border-bottom: 1px solid #141414;
-}
-
-.dw-line {
-    height: 6px;
-    background: #1a1a1a;
-    border-radius: 2px;
-    margin-bottom: 5px;
-}
-
-.dw-line.short { width: 60%; }
-
-/* ─────────────────────────────────────────
-   RESUME GRAPH preview — git log mockup
-───────────────────────────────────────── */
-.resume-preview { background: #020202; }
-
-.git-frame {
-    width: 320px;
-    background: #080808;
-    border: 1px solid #1a1a1a;
-    border-radius: 6px;
-    overflow: hidden;
-    font-size: 11px;
-}
-
-.git-top-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 8px 12px;
-    border-bottom: 1px solid #141414;
-    background: #060606;
-}
-
-.git-repo-name {
-    font-weight: bold;
-    color: var(--text-main);
-    font-size: 12px;
-}
-
-.git-branch-pill {
-    font-size: 10px;
-    color: #4ade80;
-    background: rgba(74, 222, 128, 0.1);
-    border: 1px solid rgba(74, 222, 128, 0.2);
-    padding: 1px 7px;
-    border-radius: 10px;
-}
-
-.git-log { padding: 8px 0; }
-
-.git-row {
-    display: flex;
-    align-items: center;
-    gap: 0;
-    padding: 3px 12px;
-    min-height: 22px;
-}
-
-.git-graph-col {
-    width: 24px;
-    flex-shrink: 0;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.git-graph-col.two-lanes {
-    width: 40px;
-}
-
-.g-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    flex-shrink: 0;
-    z-index: 1;
-}
-
-.g-dot.main-c { background: var(--method); }
-.g-dot.branch-c { background: #a78bfa; margin-left: 16px; }
-
-.g-vline {
-    width: 2px;
-    height: 14px;
-    margin-top: 1px;
-}
-
-.g-vline.main-c { background: var(--method); margin-left: 3px; }
-.g-vline.faint { background: #1a2a2a; margin-left: 3px; }
-
-.g-branch-out {
-    position: absolute;
-    left: 7px;
-    top: 8px;
-    width: 14px;
-    height: 10px;
-    border-left: 2px solid #a78bfa;
-    border-bottom: 2px solid #a78bfa;
-    border-bottom-left-radius: 4px;
-}
-
-.git-commit-info {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding-left: 6px;
-    flex: 1;
-}
-
-.gc-msg {
-    color: var(--text-muted);
-    font-size: 11px;
-}
-
-.gc-msg.branch-txt { color: #c4b5fd; }
-
-.gc-sha {
-    color: #333;
-    font-size: 10px;
-    margin-left: auto;
-}
-
-/* ─────────────────────────────────────────
-   CEO HYPE TRACKER preview
-───────────────────────────────────────── */
-.ceo-preview { background: #020202; }
-
-.ceo-frame {
-    width: 300px;
-    background: #080808;
-    border: 1px solid #1a1a1a;
-    border-radius: 6px;
-    overflow: hidden;
-    font-size: 11px;
-}
-
-.ceo-top {
-    padding: 12px 14px 10px;
-    border-bottom: 1px solid #141414;
-    text-align: center;
-}
-
-.ceo-counter-label {
-    font-size: 9px;
-    color: #555;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 2px;
-}
-
-.ceo-counter-num {
-    font-size: 36px;
-    font-weight: bold;
-    color: var(--text-main);
-    line-height: 1;
-    margin-bottom: 2px;
-    letter-spacing: -2px;
-}
-
-.ceo-counter-sub {
-    font-size: 10px;
-    color: #555;
-    font-style: italic;
-}
-
-.ceo-claims { padding: 8px; display: flex; flex-direction: column; gap: 6px; }
-
-.ceo-claim {
-    padding: 7px 10px;
-    border-radius: 4px;
-    border: 1px solid #141414;
-}
-
-.ceo-claim.active-claim { background: #0a1a0a; }
-.ceo-claim.dead-claim { background: #0d0d0d; }
-
-.cc-who {
-    font-size: 11px;
-    font-weight: bold;
-    color: var(--text-main);
-    margin-bottom: 1px;
-}
-
-.cc-what { font-size: 10px; color: #666; margin-bottom: 3px; }
-
-.cc-status { font-size: 10px; }
-.cc-status.countdown { color: #f97316; }
-.cc-status.graveyard { color: #555; }
 
 /* ── Experience ── */
 .exp-entry {
@@ -849,11 +528,9 @@ a:hover {
 
     .key { width: 100px; }
 
-    .project-preview { height: 190px; }
-
-    .mobile-frame { width: 150px; }
-
-    .dash-frame { width: 100%; max-width: 300px; }
-
-    .git-frame, .ceo-frame { width: 100%; max-width: 280px; }
+    .project-preview { height: 250px; }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
 }
