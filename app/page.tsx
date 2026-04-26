@@ -24,6 +24,31 @@ export default function Portfolio() {
     return () => clearTimeout(timer);
   }, []);
 
+  // Intersection Observer for active section highlighting
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -30% 0px' }
+    );
+
+    // Wait for DOM to be ready
+    const timer = setTimeout(() => {
+      const sections = document.querySelectorAll('section[id]');
+      sections.forEach((section) => observer.observe(section));
+    }, 100);
+
+    return () => {
+      clearTimeout(timer);
+      observer.disconnect();
+    };
+  }, []);
+
   const sections = [
     { id: 'whoami', label: 'whoami', category: 'personal' },
     { id: 'projects', label: 'list projects', category: 'portfolio' },
@@ -54,7 +79,9 @@ export default function Portfolio() {
       )}
 
       {/* Sidebar */}
-      <aside className={`w-64 flex-shrink-0 border-r border-zinc-800 py-7 sticky top-0 h-screen overflow-y-auto transition-all duration-300 md:translate-x-0 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} fixed md:relative z-50 bg-black md:bg-transparent`}>
+      <aside className={`w-64 flex-shrink-0 border-r border-zinc-800 py-7 h-screen overflow-y-auto transition-all duration-300 z-50 bg-black
+        md:sticky md:top-0 md:bg-transparent
+        fixed ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0`}>
         <div className="inline-flex items-center gap-2 px-6 mb-6 bg-green-500/10 border border-green-500/30 rounded-full py-1.5 mx-6 text-xs text-green-400 w-fit">
           <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
           open to work
@@ -72,10 +99,7 @@ export default function Portfolio() {
                     ? 'text-gray-100 bg-zinc-900 border-l-2 border-orange-500 pl-5' 
                     : 'text-gray-400 hover:text-gray-100 hover:bg-white/5'
                 }`}
-                onClick={() => {
-                  setActiveSection(section.id);
-                  setSidebarOpen(false);
-                }}
+                onClick={() => setSidebarOpen(false)}
               >
                 {section.label}
               </a>
