@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pratham Dupare — Software Developer building open-source tools, mobile apps, and web experiences. BS Mathematics, IISER Bhopal.">
     <title>Pratham Dupare</title>
-    <link rel="stylesheet" href="styles.css?v=5">
+    <link rel="stylesheet" href="styles.css?v=6">
     <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
@@ -14,6 +15,11 @@
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
     <div class="container">
         <aside class="sidebar">
+            <div class="status-badge">
+                <span class="status-dot"></span>
+                open to work
+            </div>
+
             <div class="sidebar-section">
                 <div class="sidebar-title"># personal</div>
                 <a href="#whoami" class="sidebar-link active">whoami</a>
@@ -27,6 +33,7 @@
             <div class="sidebar-section">
                 <div class="sidebar-title"># work</div>
                 <a href="#experience" class="sidebar-link">experience</a>
+                <a href="#education" class="sidebar-link">education</a>
                 <a href="#skills" class="sidebar-link">skills</a>
             </div>
 
@@ -36,13 +43,15 @@
             </div>
 
             <div class="sidebar-section">
-                <a href="https://blog.heypratham.in" class="sidebar-link">blog</a>
+                <a href="https://blog.heypratham.in" target="_blank" rel="noopener noreferrer" class="sidebar-link">blog ↗</a>
             </div>
         </aside>
 
         <main class="editor">
+
+            <!-- WHOAMI -->
             <section id="whoami" class="section-block">
-                <div class="terminal-header">/whoami<span class="header-cursor"></span></div>
+                <div class="terminal-header"><span id="typing-text"></span><span class="header-cursor"></span></div>
                 <div class="terminal-desc">get the current user's profile.</div>
                 <div class="terminal-content">
                     <div class="key-val">
@@ -58,6 +67,10 @@
                         <span class="val">India</span>
                     </div>
                     <div class="key-val">
+                        <span class="key">about</span>
+                        <span class="val">Building open-source tools, mobile apps, and web experiences. Math grad who writes code.</span>
+                    </div>
+                    <div class="key-val">
                         <span class="key">editor</span>
                         <span class="val">Vim btw</span>
                     </div>
@@ -68,26 +81,276 @@
                 </div>
             </section>
 
+            <!-- PROJECTS -->
             <section id="projects" class="section-block">
-                <div class="terminal-header">/projects<span class="header-cursor hidden"></span></div>
+                <div class="terminal-header">projects<span class="header-cursor hidden"></span></div>
                 <div class="terminal-desc">featured open-source work.</div>
-                <div class="terminal-content">
-                    <div class="project-entry">
-                        <div class="project-title">
-                            <a href="https://github.com/prathamdupare/hati" target="_blank" class="project-link">hati</a>
-                            <span class="badge">MIT License</span>
+                <div class="terminal-content projects-grid">
+
+                    <!-- 1. KINTSU -->
+                    <div class="project-card">
+                        <div class="project-preview kintsu-preview">
+                            <div class="preview-inner">
+                                <div class="mobile-frame">
+                                    <div class="mobile-status-bar">
+                                        <span>9:41</span>
+                                        <span class="mobile-icons">●●●</span>
+                                    </div>
+                                    <div class="mobile-header">
+                                        <span class="mobile-title">Kintsu</span>
+                                        <span class="mobile-streak">🔥 12</span>
+                                    </div>
+                                    <div class="habit-week-grid">
+                                        <div class="hwg-tile done">M</div>
+                                        <div class="hwg-tile done">T</div>
+                                        <div class="hwg-tile gold">W</div>
+                                        <div class="hwg-tile done">T</div>
+                                        <div class="hwg-tile done">F</div>
+                                        <div class="hwg-tile empty">S</div>
+                                        <div class="hwg-tile empty">S</div>
+                                    </div>
+                                    <div class="habit-row-item">
+                                        <span class="hrname">Meditation</span>
+                                        <div class="hrdots">
+                                            <div class="hd done"></div>
+                                            <div class="hd done"></div>
+                                            <div class="hd gold"></div>
+                                            <div class="hd done"></div>
+                                            <div class="hd done"></div>
+                                        </div>
+                                    </div>
+                                    <div class="habit-row-item">
+                                        <span class="hrname">Exercise</span>
+                                        <div class="hrdots">
+                                            <div class="hd done"></div>
+                                            <div class="hd empty"></div>
+                                            <div class="hd gold"></div>
+                                            <div class="hd done"></div>
+                                            <div class="hd done"></div>
+                                        </div>
+                                    </div>
+                                    <div class="habit-row-item">
+                                        <span class="hrname">Reading</span>
+                                        <div class="hrdots">
+                                            <div class="hd done"></div>
+                                            <div class="hd done"></div>
+                                            <div class="hd done"></div>
+                                            <div class="hd empty"></div>
+                                            <div class="hd gold"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="preview-overlay">
+                                <a href="https://play.google.com/store/apps/details?id=com.prathamdupare.kintsu" target="_blank" rel="noopener noreferrer" class="overlay-btn">▶ Play Store</a>
+                                <a href="https://kintsu.heypratham.in" target="_blank" rel="noopener noreferrer" class="overlay-btn">↗ website</a>
+                            </div>
                         </div>
-                        <div class="project-desc">
-                            A self-hosted dashboard that puts all your feeds in one place.
-                            Built with Next.js, TypeScript, and Tailwind CSS.
-                            Fetches and normalizes content from various sources into a unified widget-based interface.
+                        <div class="project-info">
+                            <div class="project-title-row">
+                                <a href="https://kintsu.heypratham.in" target="_blank" rel="noopener noreferrer" class="project-name">kintsu</a>
+                                <span class="pbadge pbadge-play">▶ Play Store</span>
+                                <span class="pbadge">Android</span>
+                            </div>
+                            <div class="project-tagline">The habit tracker that rewards your comeback.</div>
+                            <div class="project-desc">Every other habit app punishes you for missing a day. Kintsu repairs the crack with gold. Offline-first with urge surfing and two-second check-ins.</div>
+                            <div class="project-tags">
+                                <span class="ptag">Flutter</span>
+                                <span class="ptag">Dart</span>
+                                <span class="ptag">Android</span>
+                                <span class="ptag">offline-first</span>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- 2. HATI -->
+                    <div class="project-card">
+                        <div class="project-preview hati-preview">
+                            <div class="preview-inner">
+                                <div class="dash-frame">
+                                    <div class="dash-sidebar">
+                                        <div class="dash-logo">hati</div>
+                                        <div class="dash-nav active-nav">feeds</div>
+                                        <div class="dash-nav">reddit</div>
+                                        <div class="dash-nav">hn</div>
+                                        <div class="dash-nav">github</div>
+                                        <div class="dash-nav">rss</div>
+                                    </div>
+                                    <div class="dash-content">
+                                        <div class="dash-widget">
+                                            <div class="dw-head">Hacker News</div>
+                                            <div class="dw-line"></div>
+                                            <div class="dw-line short"></div>
+                                            <div class="dw-line"></div>
+                                            <div class="dw-line short"></div>
+                                        </div>
+                                        <div class="dash-widget">
+                                            <div class="dw-head">GitHub Activity</div>
+                                            <div class="dw-line short"></div>
+                                            <div class="dw-line"></div>
+                                            <div class="dw-line short"></div>
+                                            <div class="dw-line"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="preview-overlay">
+                                <a href="https://github.com/prathamdupare/hati" target="_blank" rel="noopener noreferrer" class="overlay-btn">↗ github</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-title-row">
+                                <a href="https://github.com/prathamdupare/hati" target="_blank" rel="noopener noreferrer" class="project-name">hati</a>
+                                <span class="pbadge">MIT</span>
+                                <span class="pbadge">open source</span>
+                            </div>
+                            <div class="project-tagline">All your feeds in one place.</div>
+                            <div class="project-desc">A self-hosted dashboard that fetches and normalizes content from various sources into a unified widget-based interface.</div>
+                            <div class="project-tags">
+                                <span class="ptag">Next.js</span>
+                                <span class="ptag">TypeScript</span>
+                                <span class="ptag">Tailwind</span>
+                                <span class="ptag">self-hosted</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. RESUME GRAPH -->
+                    <div class="project-card">
+                        <div class="project-preview resume-preview">
+                            <div class="preview-inner">
+                                <div class="git-frame">
+                                    <div class="git-top-bar">
+                                        <span class="git-repo-name">resume-graph</span>
+                                        <span class="git-branch-pill">⎇ main</span>
+                                    </div>
+                                    <div class="git-log">
+                                        <div class="git-row">
+                                            <div class="git-graph-col">
+                                                <div class="g-dot main-c"></div>
+                                                <div class="g-vline main-c"></div>
+                                            </div>
+                                            <div class="git-commit-info">
+                                                <span class="gc-msg">add base resume</span>
+                                                <span class="gc-sha">3a1bc</span>
+                                            </div>
+                                        </div>
+                                        <div class="git-row">
+                                            <div class="git-graph-col two-lanes">
+                                                <div class="g-dot main-c"></div>
+                                                <div class="g-vline main-c"></div>
+                                                <div class="g-branch-out"></div>
+                                            </div>
+                                            <div class="git-commit-info">
+                                                <span class="gc-msg">branch: google-swe</span>
+                                                <span class="gc-sha">a2c4d</span>
+                                            </div>
+                                        </div>
+                                        <div class="git-row branch-only">
+                                            <div class="git-graph-col two-lanes">
+                                                <div class="g-vline main-c faint"></div>
+                                                <div class="g-dot branch-c"></div>
+                                            </div>
+                                            <div class="git-commit-info">
+                                                <span class="gc-msg branch-txt">tweak summary section</span>
+                                                <span class="gc-sha">b3d5e</span>
+                                            </div>
+                                        </div>
+                                        <div class="git-row">
+                                            <div class="git-graph-col two-lanes">
+                                                <div class="g-dot main-c"></div>
+                                                <div class="g-vline main-c"></div>
+                                                <div class="g-branch-out"></div>
+                                            </div>
+                                            <div class="git-commit-info">
+                                                <span class="gc-msg">branch: stripe-eng</span>
+                                                <span class="gc-sha">c4e6f</span>
+                                            </div>
+                                        </div>
+                                        <div class="git-row branch-only">
+                                            <div class="git-graph-col two-lanes">
+                                                <div class="g-vline main-c faint"></div>
+                                                <div class="g-dot branch-c"></div>
+                                            </div>
+                                            <div class="git-commit-info">
+                                                <span class="gc-msg branch-txt">highlight payments xp</span>
+                                                <span class="gc-sha">d5f7a</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="preview-overlay">
+                                <a href="https://github.com/prathamdupare" target="_blank" rel="noopener noreferrer" class="overlay-btn">↗ github</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-title-row">
+                                <span class="project-name no-link">resume-graph</span>
+                                <span class="pbadge pbadge-wip">WIP</span>
+                            </div>
+                            <div class="project-tagline">Treat your resume like a Git repo.</div>
+                            <div class="project-desc">One base resume, branch per role. Visual canvas to see which version went where. AI helper rewrites sections in place — no more "Resume-Final-v7-actual.pdf".</div>
+                            <div class="project-tags">
+                                <span class="ptag">LaTeX</span>
+                                <span class="ptag">TypeScript</span>
+                                <span class="ptag">Canvas</span>
+                                <span class="ptag">AI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. CEO HYPE TRACKER -->
+                    <div class="project-card">
+                        <div class="project-preview ceo-preview">
+                            <div class="preview-inner">
+                                <div class="ceo-frame">
+                                    <div class="ceo-top">
+                                        <div class="ceo-counter-label">days since last CEO claimed</div>
+                                        <div class="ceo-counter-num" id="dayCounter">0</div>
+                                        <div class="ceo-counter-sub">"AI will replace programmers"</div>
+                                    </div>
+                                    <div class="ceo-claims">
+                                        <div class="ceo-claim active-claim">
+                                            <div class="cc-who">Sam Altman</div>
+                                            <div class="cc-what">95% of engineering done by AI</div>
+                                            <div class="cc-status countdown">⏱ 312 days left</div>
+                                        </div>
+                                        <div class="ceo-claim dead-claim">
+                                            <div class="cc-who">Emad Mostaque</div>
+                                            <div class="cc-what">No programmers in 5 years</div>
+                                            <div class="cc-status graveyard">💀 deadline passed</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="preview-overlay">
+                                <a href="https://monthssincelastaiclaim.fun" target="_blank" rel="noopener noreferrer" class="overlay-btn">↗ live site</a>
+                                <a href="https://github.com/prathamdupare/ceo-hype-tracker" target="_blank" rel="noopener noreferrer" class="overlay-btn">↗ github</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-title-row">
+                                <a href="https://monthssincelastaiclaim.fun" target="_blank" rel="noopener noreferrer" class="project-name">ceo-hype-tracker</a>
+                                <span class="pbadge pbadge-star">★ 18</span>
+                                <span class="pbadge">MIT</span>
+                            </div>
+                            <div class="project-tagline">Receipts for the AI hype machine.</div>
+                            <div class="project-desc">Tracks every time a CEO claims "AI will replace programmers." Active countdowns, a graveyard of expired predictions, and fully documented sources.</div>
+                            <div class="project-tags">
+                                <span class="ptag">Next.js</span>
+                                <span class="ptag">TypeScript</span>
+                                <span class="ptag">fun</span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </section>
 
+            <!-- EXPERIENCE -->
             <section id="experience" class="section-block">
-                <div class="terminal-header">/experience<span class="header-cursor hidden"></span></div>
+                <div class="terminal-header">experience<span class="header-cursor hidden"></span></div>
                 <div class="terminal-desc">work history, most recent first.</div>
                 <div class="terminal-content">
 
@@ -97,18 +360,8 @@
                             <span class="exp-company">FoCDoT Technologies</span>
                             <span class="exp-type">Internship · Hybrid</span>
                         </div>
-                        <div class="exp-period">Oct 2024 – Sep 2025 · 1 yr</div>
+                        <div class="exp-period">Oct 2024 – Sep 2025 · 1 yr · Bhopal, MP</div>
                         <div class="exp-stack">React.js · Python · TypeScript</div>
-                    </div>
-
-                    <div class="exp-entry">
-                        <div class="exp-role">Founder</div>
-                        <div class="exp-meta">
-                            <span class="exp-company">Fosspage</span>
-                            <span class="exp-type">Self-employed · India</span>
-                        </div>
-                        <div class="exp-period">Jan 2022 – Present · 4 yrs</div>
-                        <div class="exp-desc">Web portal focused on Linux, Android and open-source — making FOSS accessible and practical for everyone.</div>
                     </div>
 
                     <div class="exp-entry">
@@ -117,24 +370,55 @@
                             <span class="exp-company">Upwork</span>
                             <span class="exp-type">Freelance · Remote</span>
                         </div>
-                        <div class="exp-period">Feb 2023 – Present · 3 yrs</div>
+                        <div class="exp-period">Feb 2023 – Mar 2025 · 2 yrs 2 mos</div>
                         <div class="exp-stack">React.js · TypeScript</div>
+                    </div>
+
+                    <div class="exp-entry">
+                        <div class="exp-role">Founder</div>
+                        <div class="exp-meta">
+                            <span class="exp-company">Fosspage</span>
+                            <span class="exp-type">Self-employed · India</span>
+                        </div>
+                        <div class="exp-period">Jan 2022 – Mar 2025 · 3 yrs 3 mos</div>
+                        <div class="exp-desc">Web portal focused on Linux, Android and open-source — making FOSS accessible and practical for everyone.</div>
                     </div>
 
                 </div>
             </section>
 
+            <!-- EDUCATION -->
+            <section id="education" class="section-block">
+                <div class="terminal-header">education<span class="header-cursor hidden"></span></div>
+                <div class="terminal-desc">academic background.</div>
+                <div class="terminal-content">
+                    <div class="edu-entry">
+                        <div class="edu-degree">BS Mathematics</div>
+                        <div class="edu-meta">
+                            <span class="edu-school">IISER Bhopal</span>
+                            <span class="edu-type">Indian Institute of Science Education and Research</span>
+                        </div>
+                        <div class="edu-period">2020 – 2025 · Bhopal, MP</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SKILLS -->
             <section id="skills" class="section-block">
-                <div class="terminal-header">/skills<span class="header-cursor hidden"></span></div>
+                <div class="terminal-header">skills<span class="header-cursor hidden"></span></div>
                 <div class="terminal-desc">languages, tools, and environment.</div>
                 <div class="terminal-content">
                     <div class="key-val">
                         <span class="key">languages</span>
-                        <span class="val">TypeScript · JavaScript · Go · Python</span>
+                        <span class="val">TypeScript · JavaScript · Go · Python · Dart</span>
                     </div>
                     <div class="key-val">
                         <span class="key">frontend</span>
                         <span class="val">React · Next.js · Tailwind CSS</span>
+                    </div>
+                    <div class="key-val">
+                        <span class="key">mobile</span>
+                        <span class="val">Flutter · Android</span>
                     </div>
                     <div class="key-val">
                         <span class="key">cs</span>
@@ -151,34 +435,42 @@
                 </div>
             </section>
 
+            <!-- CONTACT -->
             <section id="contact" class="section-block">
-                <div class="terminal-header">/contact<span class="header-cursor hidden"></span></div>
+                <div class="terminal-header">contact<span class="header-cursor hidden"></span></div>
                 <div class="terminal-desc">retrieve contact links and social profiles.</div>
                 <div class="terminal-content">
                     <div class="key-val">
+                        <span class="key">email</span>
+                        <span class="val"><a href="mailto:prathmeshdupare@gmail.com">prathmeshdupare@gmail.com</a></span>
+                    </div>
+                    <div class="key-val">
                         <span class="key">github</span>
-                        <span class="val"><a href="https://github.com/prathamdupare" target="_blank">github.com/prathamdupare</a></span>
+                        <span class="val"><a href="https://github.com/prathamdupare" target="_blank" rel="noopener noreferrer">github.com/prathamdupare</a></span>
                     </div>
                     <div class="key-val">
                         <span class="key">linkedin</span>
-                        <span class="val"><a href="https://linkedin.com/in/pratham-dupare-a99b97247" target="_blank">linkedin.com/in/pratham-dupare-a99b97247</a></span>
+                        <span class="val"><a href="https://linkedin.com/in/pratham-dupare-a99b97247" target="_blank" rel="noopener noreferrer">linkedin.com/in/pratham-dupare</a></span>
                     </div>
                     <div class="key-val">
                         <span class="key">x (twitter)</span>
-                        <span class="val"><a href="https://x.com/prathammdupare" target="_blank">x.com/prathammdupare</a></span>
+                        <span class="val"><a href="https://x.com/prathammdupare" target="_blank" rel="noopener noreferrer">x.com/prathammdupare</a></span>
                     </div>
                     <div class="key-val">
                         <span class="key">instagram</span>
-                        <span class="val"><a href="https://www.instagram.com/prathammdupare/" target="_blank">instagram.com/prathammdupare</a></span>
+                        <span class="val"><a href="https://www.instagram.com/prathammdupare/" target="_blank" rel="noopener noreferrer">instagram.com/prathammdupare</a></span>
                     </div>
                 </div>
-
+                <div class="back-to-top">
+                    <a href="#whoami">↑ cd ~</a>
+                </div>
             </section>
-        </main>
 
+        </main>
     </div>
 
     <script>
+        // ── Mobile menu ──
         const menuBtn = document.getElementById('menuBtn');
         const sidebar = document.querySelector('.sidebar');
         const overlay = document.getElementById('sidebarOverlay');
@@ -188,46 +480,89 @@
             overlay.classList.add('active');
             menuBtn.classList.add('open');
         }
-
         function closeSidebar() {
             sidebar.classList.remove('open');
             overlay.classList.remove('active');
             menuBtn.classList.remove('open');
         }
-
-        menuBtn.addEventListener('click', () => {
-            sidebar.classList.contains('open') ? closeSidebar() : openSidebar();
-        });
+        menuBtn.addEventListener('click', () =>
+            sidebar.classList.contains('open') ? closeSidebar() : openSidebar()
+        );
         overlay.addEventListener('click', closeSidebar);
 
-        function activateSection(section) {
-            document.querySelectorAll('.header-cursor').forEach(c => c.classList.add('hidden'));
-            const headerCursor = section.querySelector('.header-cursor');
-            if (headerCursor) headerCursor.classList.remove('hidden');
-
-            const sectionId = section.getAttribute('id');
-            document.querySelectorAll('.sidebar-link').forEach(link => link.classList.remove('active'));
-            const matchingLink = document.querySelector(`.sidebar-link[href="#${sectionId}"]`);
-            if (matchingLink) matchingLink.classList.add('active');
-        }
-
+        // ── Smooth scroll ──
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const targetElement = document.querySelector(this.getAttribute('href'));
-                if (targetElement) {
-                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    activateSection(targetElement);
-                }
-                document.querySelectorAll('.sidebar-link').forEach(link => link.classList.remove('active'));
-                this.classList.add('active');
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 closeSidebar();
             });
         });
 
-        document.querySelectorAll('.section-block').forEach(section => {
+        // ── IntersectionObserver: active section on scroll ──
+        const sections = document.querySelectorAll('.section-block');
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    document.querySelectorAll('.header-cursor').forEach(c => c.classList.add('hidden'));
+                    const cursor = entry.target.querySelector('.header-cursor');
+                    if (cursor) cursor.classList.remove('hidden');
+                    sidebarLinks.forEach(l => l.classList.remove('active'));
+                    const match = document.querySelector(`.sidebar-link[href="#${id}"]`);
+                    if (match) match.classList.add('active');
+                }
+            });
+        }, { threshold: 0.2, rootMargin: '0px 0px -20% 0px' });
+
+        sections.forEach(s => io.observe(s));
+
+        // ── Typing animation on whoami ──
+        const typingEl = document.getElementById('typing-text');
+        const fullText = 'whoami';
+        let i = 0;
+        function type() {
+            if (i <= fullText.length) {
+                typingEl.textContent = fullText.slice(0, i);
+                i++;
+                setTimeout(type, 90);
+            }
+        }
+        setTimeout(type, 300);
+
+        // ── CEO counter roll-up animation ──
+        const counterEl = document.getElementById('dayCounter');
+        const target = 47;
+        let count = 0;
+        function rollUp() {
+            if (count < target) {
+                count += 2;
+                if (count > target) count = target;
+                counterEl.textContent = count;
+                setTimeout(rollUp, 30);
+            }
+        }
+
+        const ceoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    rollUp();
+                    ceoObserver.disconnect();
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if (counterEl) ceoObserver.observe(counterEl);
+
+        // ── Section click ──
+        sections.forEach(section => {
             section.addEventListener('click', function () {
-                activateSection(this);
+                document.querySelectorAll('.header-cursor').forEach(c => c.classList.add('hidden'));
+                const cursor = this.querySelector('.header-cursor');
+                if (cursor) cursor.classList.remove('hidden');
             });
         });
     </script>
